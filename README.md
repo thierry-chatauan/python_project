@@ -1,0 +1,1 @@
+A portfolio website built with Flask (Python), HTML, CSS, and JavaScript. Created as part of my Full Stack Web Development course, it features dynamic routing, responsive design, and modular templates using Jinja2. This project helped me gain experience building, styling, and deploying a live web app.

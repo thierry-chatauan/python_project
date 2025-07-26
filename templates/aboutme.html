@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block css %}
+<style>
+    .container_profile {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .profile-pic {
+        width: 300px;
+        border-radius: 50%;
+        border: 1px solid black;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container fade-slide">
+    <h1 class="page-title">My Journey in Ireland</h1>
+    <div class="container_profile">
+        <div id="profile_text">
+            <p>Since I moved to Ireland in 2019, it’s been both exciting and challenging to adapt to a completely new
+                culture and way of life. Every day I discover something new, whether it’s about the people, traditions,
+                or simply learning how things work in a different country.</p>
+
+            <p>One of the biggest challenges has been improving my English and integrating into the local community. At
+                the same time, these challenges have pushed me to grow personally and professionally, and I’ve learned
+                to appreciate the beauty of stepping out of my comfort zone.</p>
+
+            <p>Living abroad has not only shaped my perspective on life but also motivated me to pursue my passion for
+                technology and web development. This blog is part of that journey, where I share my progress,
+                experiences, and lessons learned along the way.</p>
+
+        </div>
+        <div id="profile_picture">
+            <img src="{{ url_for('static', filename='images/profile.jpeg') }}" class="profile-pic"
+                alt="profile picture">
+        </div>
+    </div>
+</div>
+{% endblock %}

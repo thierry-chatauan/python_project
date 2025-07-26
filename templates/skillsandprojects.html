@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block css %}
+<style>
+    .skill-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.skill-category {
+    background: #f8f9fa;
+    border-left: 10px solid #3498db;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 0 5px 5px 0;
+}
+
+</style>
+{% endblock %}
+{% block content %}    
+    <div class="container fade-slide">
+    <h1 class="page-title">My Skills</h1>
+    
+    <div class="skill-category">
+        <h3>Technical Skills</h3>
+        <ul>
+            {% for item in skills.technical %}
+            <li>{{ item|safe }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="skill-category">
+        <h3>Soft Skills</h3>
+        <ul>
+            {% for item in skills.soft %}
+            <li>{{ item|safe }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

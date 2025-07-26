@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block css %}
+    {% endblock %}
+</head>
+
+<body>
+    <div>
+        <header>
+            <div class="menu">
+                <h1>Thierry Chatauan</h1>
+                <nav>
+                    <ul>
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('aboutme') }}">About me</a></li>
+                        <li><a href="{{ url_for('skillsandprojects') }}">Skills & Projects</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                        <li><a href="{{ url_for('leaveamessage') }}">Leave a message</a></li>
+                    </ul>
+                </nav>
+        </header>
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer>
+        <!-- Thierry Chatauan -->
+    </footer>
+</body>
+
+</html>
