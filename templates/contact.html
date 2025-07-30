@@ -1,4 +1,17 @@
 {% extends "base.html" %}
-{% block content %}    
-    <h1>Contact me</h1>
+{% block content %}
+<div class="container fade-slide">
+    <h1 class="contact_title">You can find me through these links below:</h1>
+    <div class="contact_list">
+        {% for item in contact_list %}
+        <h2>
+            <a href="{{ item.link_of_social_media }}" target="_blank">
+                <img src="{{ url_for('static', filename='icons/' ~ item.icon )}}" alt="{{ item.social_media }} icon"
+                    width="24" height="24" style="vertical-align: middle; margin-right: 8px;">
+                {{ item.social_media }}
+            </a>
+        </h2>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

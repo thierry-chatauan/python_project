@@ -15,21 +15,44 @@ def aboutme():
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')
+    contact_list = [
+        { 
+        "social_media":"GitHub",
+        "link_of_social_media": "https://github.com/thierry-chatauan",
+        "icon": "github-icon.png"
+    },
+    {
+        "social_media":"LinkedIn",
+        "link_of_social_media": "https://ie.linkedin.com/in/thycbs",
+        "icon": "icons8-linkedin-50.png"
+    }
+    ]
+    
+    return render_template('contact.html', contact_list = contact_list)
 
 @app.route('/skillsandprojects')
 def skillsandprojects():
     skills_data = {
         "technical": [
             "Front-End: HTML5, CSS3, JavaScript (DOM manipulation, APIs)",
-            "Back-End: Python, Flask (building a project management tool)"
+            "Back-End: Python, Flask (building this portifolio project )"
         ],
         "soft": [
-            "Problem-solving (debugging complex errors)",
             "Self-learning (documenting my coding journey)"
         ]
     }
-    return render_template('skillsandprojects.html', skills=skills_data)
+    projects = [
+    {
+        "name_of_project": "Web page developed with HTML and CSS",
+        "link_of_project": "https://thierry-chatauan.github.io/ucd-website-project/"
+    },
+    {
+        "name_of_project": "To-do list built with vanilla JavaScript",
+        "link_of_project": "https://thierry-chatauan.github.io/ucd_js_project/"
+    }
+]
+    return render_template('skillsandprojects.html', skills=skills_data, projects=projects)
+
 
 @app.route('/leaveamessage', methods=['GET', 'POST'])
 def leaveamessage():
@@ -50,11 +73,11 @@ def leaveamessage():
             "location": location,
             "message": message
         }
-        response = requests.post("https://json-alura-geek.vercel.app/users", submitted_data)
+        response = requests.post("https://674edcf2bb559617b26d0bca.mockapi.io/api/v1/users", submitted_data)
         redirect('/leaveamessage')
         
     try:
-        response = requests.get("https://json-alura-geek.vercel.app/users")
+        response = requests.get("https://674edcf2bb559617b26d0bca.mockapi.io/api/v1/users")
         data = response.json()
         print(data)
     except Exception as e:

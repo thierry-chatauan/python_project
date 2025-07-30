@@ -2,25 +2,22 @@
 {% block content %}
 <div class="container fade-slide">
     <form method="POST" action="/leaveamessage">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
+        <div class="form-detail">
+            <input type="text" id="name" name="name" placeholder="*Name" required><br><br>
+            <input type="text" id="location" name="location" placeholder="*Location" required><br><br>
+        </div>
 
-        <label for="location">Location:</label><br>
-        <input type="text" id="location" name="location" placeholder="Your Location" required><br><br>
-
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" placeholder="Your Message" required></textarea><br><br>
+        <textarea id="message" name="message" placeholder="*Message" required></textarea><br>
 
         <button type="submit">Send Message</button>
     </form>
 
     <div class="api-messages">
         {% for message in messages %}
-        <div class="message-item">
-            <h3>{{ message.name }}</h3>
-            <p>Location: {{ message.location }}</p>
-            <p>Message: {{ message.message }}</p>
-        </div>
+        <ul class="message-item">
+            <h3>{{ message.name }} - {{ message.location }}</h3>
+            <p>{{ message.message }}</p>
+        </ul>
         {% endfor %}
     </div>
 </div>
