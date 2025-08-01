@@ -1,0 +1,16 @@
+PYTHON_PROJECT/
+│
+├── app.py
+├── templates/
+│   ├── base.html
+│   ├── aboutme.html
+│   ├── contact.html
+│   ├── home.html
+│   ├── leaveamessage.html
+│   ├── skillsandprojects.html
+├── static/
+│   ├── css/style.css
+│   └── icons
+│   └── images
+├── README.md
+├── requirements.txt

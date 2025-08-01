@@ -40,7 +40,7 @@ header .menu ul li {
 header .menu ul li a {
     text-decoration: none;
     color: #BBDEFB;
-    transition: color 0.3s, transform 0.3s ease ;
+    transition: color 0.3s, transform 0.3s ease;
     display: inline-block;
 }
 
@@ -63,7 +63,7 @@ header .menu ul li a:hover {
     color: #0D47A1;
 }
 
-.contact_title{
+.contact_title {
     text-align: center;
 }
 
@@ -111,9 +111,22 @@ footer {
     color: #BBDEFB;
 }
 
+/* s */
+.container_profile {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-pic {
+    width: 300px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
 /* Skills and Projects */
 .project_links {
-    list-style:disc;
+    list-style: disc;
 }
 
 .project_links a {
@@ -121,7 +134,7 @@ footer {
 }
 
 /* Contact */
-.contact_list{
+.contact_list {
     display: flex;
     justify-content: space-around;
 }
@@ -186,3 +199,99 @@ button[type="submit"]:hover {
     background-color: #1565C0;
 }
 
+@media (max-width: 500px) {
+    body {
+        flex-direction: column;
+    }
+
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    header .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    header .menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .page-title {
+        font-size: 28px;
+        letter-spacing: 5px;
+    }
+
+    .contact_list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container_profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #profile_picture {
+        order: -1;
+        /* Ensures image comes before text */
+    }
+
+    .profile-pic {
+        width: 80%;
+        max-width: 250px;
+    }
+
+    #profile_text {
+        padding: 0 10px;
+    }
+
+    form .form-detail {
+        flex-direction: column;
+        height: auto;
+    }
+
+    form .form-detail input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .api-messages {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .message-item {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 40px;
+        width: 100%;
+        background-color: #0D47A1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #BBDEFB;
+    }
+}
